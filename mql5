@@ -1,0 +1,110 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                             Dream Catcher        |
+//|                  Developer: Forex Robot Easy Team                 |
+//|                  Website: forexroboteasy.com                      |
+//+------------------------------------------------------------------+
+
+// Global Variables
+input int maxMovingAverages = 10; // Maximum number of MA for opening trades
+input int maxClosingMovingAverages = 5; // Maximum number of MA for closing trades
+input double slopeRange = 0.1; // Slope range for ignoring trade signals
+input bool useADXFilter = true; // Enable ADX filter
+input double adxThreshold = 25; // ADX threshold for filtering trades
+
+//+------------------------------------------------------------------+
+//|  Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add initialization code here
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//|  Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add cleanup code here
+}
+
+//+------------------------------------------------------------------+
+//|  Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add main logic code here
+
+    // Check if all conditions are met for opening a trade
+    if (CanOpenTrade())
+    {
+        // Execute market order based on MA crossover strategy
+        OpenTrade();
+    }
+
+    // Check if all conditions are met for closing a trade
+    if (CanCloseTrade())
+    {
+        // Close the trade
+        CloseTrade();
+    }
+}
+
+//+------------------------------------------------------------------+
+//|  Check if all conditions are met for opening a trade              |
+//+------------------------------------------------------------------+
+bool CanOpenTrade()
+{
+    // Add conditions for opening a trade here
+
+    return true;
+}
+
+//+------------------------------------------------------------------+
+//|  Execute market order based on MA crossover strategy              |
+//+------------------------------------------------------------------+
+void OpenTrade()
+{
+    // Add code to execute market order here
+}
+
+//+------------------------------------------------------------------+
+//|  Check if all conditions are met for closing a trade              |
+//+------------------------------------------------------------------+
+bool CanCloseTrade()
+{
+    // Add conditions for closing a trade here
+
+    return true;
+}
+
+//+------------------------------------------------------------------+
+//|  Close the trade                                                  |
+//+------------------------------------------------------------------+
+void CloseTrade()
+{
+    // Add code to close the trade here
+}
+
+//+------------------------------------------------------------------+
+//|  Custom functions for moving average calculations                 |
+//+------------------------------------------------------------------+
+double CalculateMovingAverage(int period)
+{
+    // Add code to calculate moving average here
+}
+
+double CalculateSlope(double[] values)
+{
+    // Add code to calculate slope here
+}
+
+//+------------------------------------------------------------------+
+//|  Custom functions for ADX indicator calculations                  |
+//+------------------------------------------------------------------+
+double CalculateADX()
+{
+    // Add code to calculate ADX here
+}
